@@ -6,8 +6,8 @@ function animation(){
     update_character_controls(delta_time);
 
     var distance_camera_to_0_0_0 = camera.position.length();
-    if (camera.position.length() > (2000 - 10)) {
-        camera.position.setLength(2000 - 10);
+    if (camera.position.length() > (500 - 10)) {
+        camera.position.setLength(500 - 10);
     }
 
     document.getElementById("fps_counter").innerHTML = fps;

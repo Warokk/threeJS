@@ -30,7 +30,7 @@ function init(){
         controls = new SpaceControls(character, controls_vectors);
 
     // border
-    var geometry_bordure = new THREE.IcosahedronGeometry(2000, 4);
+    var geometry_bordure = new THREE.IcosahedronGeometry(500, 4);
     var material_bordure_1 = new THREE.MeshBasicMaterial({color: "white", wireframe: true});
     var material_bordure_2 = new THREE.MeshBasicMaterial({
         color: "black",
@@ -49,10 +49,9 @@ function init(){
 
     // terrain
     var geometry_terrain = new THREE.PlaneGeometry(5000, 5000, 128, 128);
-    var material_terrain = new THREE.MeshLambertMaterial({
+    var material_terrain = new THREE.MeshBasicMaterial({
         wireframe: false,
-        color: "white",
-        vertexColors: THREE.FaceColors
+        color: "#00008b"
     });
     geometry_terrain.computeFaceNormals();
     for (var i = 0; i < geometry_terrain.faces.length; i++) {
