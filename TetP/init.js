@@ -1,9 +1,9 @@
 function init(){
     // init scene
     scene = new THREE.Scene();
-    camera = new THREE.PerspectiveCamera(90, window.innerWidth / window.innerHeight, 0.01, 100000);
+    camera = new THREE.PerspectiveCamera(100, window.innerWidth / window.innerHeight, 0.01, 100000);
     scene.add(camera);
-    camera.position.set(0, 300, -1000);
+    camera.position.set(0, -20, 0);
     camera.lookAt(new THREE.Vector3(0, 0, 0));
 
     // init renderer
@@ -25,7 +25,7 @@ function init(){
 
     // character control (camera)
     controls_vectors = [];
-        controls_vectors.push(new THREE.Vector3(0, 0, -1));
+        controls_vectors.push(new THREE.Vector3(0, 0, 2));
         character = camera;
         controls = new SpaceControls(character, controls_vectors);
 
@@ -33,7 +33,7 @@ function init(){
     var geometry_bordure = new THREE.IcosahedronGeometry(500, 4);
     var material_bordure_1 = new THREE.MeshBasicMaterial({color: "white", wireframe: true});
     var material_bordure_2 = new THREE.MeshBasicMaterial({
-        color: "black",
+        color: "red",
         wireframe: false,
         side: THREE.DoubleSide
     });
@@ -51,7 +51,12 @@ function init(){
     var geometry_terrain = new THREE.PlaneGeometry(5000, 5000, 128, 128);
     var material_terrain = new THREE.MeshBasicMaterial({
         wireframe: false,
+<<<<<<< HEAD
         color: "#00008b"
+=======
+        color: "green",
+        vertexColors: THREE.FaceColors
+>>>>>>> c86bd9e30588f39c88f2f83bf3e37a06e32a978d
     });
     geometry_terrain.computeFaceNormals();
     for (var i = 0; i < geometry_terrain.faces.length; i++) {
