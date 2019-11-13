@@ -41,7 +41,19 @@
 
     <script src="js/SpaceControls.js"></script>
     <script src="js/ImprovedNoise.js"></script>
+    <script src="TetP/init.js"></script>
+    <script src="TetP/animation.js"></script>
     <script type="text/javascript">
-        
+        /* Variables globales */
+        var scene = null;
+        var camera = null;
+        var renderer = null;
+
+        init();
+        animation();
+
+        function render(){
+            renderer.render(scene,camera);
+        }
     </script>
 </html>
