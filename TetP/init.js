@@ -23,6 +23,12 @@ function init(){
     // mouse lock
     pointerlockConfiguration();
 
+    // character control (camera)
+    controls_vectors = [];
+        controls_vectors.push(new THREE.Vector3(0, 0, -1));
+        character = camera;
+        controls = new SpaceControls(character, controls_vectors);
+
     // border
     var geometry_bordure = new THREE.IcosahedronGeometry(2000, 4);
     var material_bordure_1 = new THREE.MeshBasicMaterial({color: "white", wireframe: true});
@@ -36,10 +42,10 @@ function init(){
     scene.add(bordure);
 
     var light = new THREE.PointLight("white", 1, 100000);
-        light.position.set(0, 4000, 0);
-        //camera.add(light);
-        scene.add(light);
-        lights.push(light);
+    light.position.set(0, 4000, 0);
+    //camera.add(light);
+    scene.add(light);
+    lights.push(light);
 
     // terrain
     var geometry_terrain = new THREE.PlaneGeometry(5000, 5000, 128, 128);

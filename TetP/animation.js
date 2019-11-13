@@ -4,7 +4,6 @@ function animation(){
     fps = parseInt(1000 / delta_time);
 
     update_character_controls(delta_time);
-    interdire_passer_sous_terrain(camera);
 
     var distance_camera_to_0_0_0 = camera.position.length();
     if (camera.position.length() > (2000 - 10)) {

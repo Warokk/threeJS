@@ -40,20 +40,30 @@
     <script src="three//examples/js/utils/SceneUtils.js"></script>
 
     <script src="js/SpaceControls.js"></script>
-    <script src="js/ImprovedNoise.js"></script>
     <script src="TetP/init.js"></script>
     <script src="TetP/animation.js"></script>
+
     <script type="text/javascript">
         /* Variables globales */
         var scene = null;
         var camera = null;
         var renderer = null;
+        var fps = 0;
+        var last_time = 0;
+        var delta_time = 0;
+        var lights = [];
+        var terrain = null;
+        var bordure = null;
+        var character = null;
+        var controls = null;
+        var controls_vectors = null;
+        
 
         init();
         animation();
 
         function render(){
-            renderer.render(scene,camera);
+            renderer.render(scene, camera);
         }
     </script>
 </html>
